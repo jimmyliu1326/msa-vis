@@ -13,29 +13,29 @@
 
 The source code and required dependencies are containerized as a single image file that can be downloaded via `Docker` or `Singularity`.
 
-### Docker
+#### Docker
 ```
 docker pull jimmyliu1326/msa-vis
 ```
-### Singularity
+#### Singularity
 ```
 singularity pull docker://jimmyliu1326/msa-vis
 ```
 
-Once the image has been downloaded, try calling `msa-vis` to print the script usage message to screen.
+Once the image has been downloaded, try calling `msa-vis.R` to print the script usage message to screen.
 
-### Docker
+#### Docker
 ```
 docker run jimmyliu1326/msa-vis msa-vis.R --help
 ```
-### Singularity
+#### Singularity
 ```
 singularity exec msa-vis.sif msa-vis.R --help
 ```
 
 If the help message successfully prints to screen, then you are all set! :partying_face:
 
-# Example visualizations
+## Example visualizations
 ### DNA alignment
 ![](img/dna.png)
 ### Amino acid alignment
