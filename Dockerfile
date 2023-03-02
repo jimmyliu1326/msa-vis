@@ -8,7 +8,7 @@ RUN R -e "install.packages(c( \
                 'ggpubr', 'scales', \
                 'furrr', 'argparse', \
                 'remotes', 'BiocManager'))" && \
-    R -e "BiocManager::install('Biostrings')"            
+    R -e "BiocManager::install('Biostrings')" && \            
     R -e "remotes::install_github('YuLab-SMU/ggmsa')"
 
 ADD msa-vis.R /usr/local/bin/
