@@ -16,8 +16,8 @@ parser$add_argument("-i", "--input", type="character", required=TRUE,
 parser$add_argument("-o", "--output", type="character", default="./msa-vis.pdf",
     help="Path to output visualization [default %(default)s]")
 parser$add_argument("--type", type="character", required=TRUE,
-    choices = c("dna", "protein"),
-    help="Specify input MSA is DNA or Protein alignment")
+    choices = c("dna", "aa"),
+    help="Specify input MSA is DNA or amino acid alignment")
 parser$add_argument("--include_legend", action="store_true",
     help="Add colour legend")
 parser$add_argument("--hide_letters", action="store_true",
@@ -27,7 +27,7 @@ parser$add_argument("--chunk_len", type="integer", default=50,
 parser$add_argument("--font", type="character", default='helvetical',
     choices = c('helvetical', 'mono', 'DroidSansMono', 'TimesNewRoman'),
     help="Font style [default \"%(default)s\"]")
-parser$add_argument("--font-size", type="integer", default=13,
+parser$add_argument("--fontsize", type="integer", default=9,
     help="Font size [default \"%(default)s\"]")
 parser$add_argument("-t", "--threads", type="double", default=1,
     help="Number of threads to use [default \"%(default)s\"]")
@@ -99,17 +99,19 @@ main <- function() {
     if ( args$threads > 1) { plan(future::cluster, workers = args$threads) }
     # read msa
     msa <- Biostrings::readDNAStringSet(args$input)
+    # revise fasta header names; only keep strings before the first blank space
+    names(msa) <- gsub(" .*", "", names(msa))
     # create msa viz for each subregion with length of chunk_len
     plots <- future_map(
         seq(1, msa@ranges@width[1], args$chunk_len),
         ~plot_msa(
             msa,
             start=.,
-            end=. + args$chunk_len,
+            end=. + args$chunk_len - 1,
             scheme=ifelse(args$type == "dna", "Chemistry_NT", "Chemistry_AA"),
             show_legend=args$include_legend,
             font=unlist(ifelse(args$hide_letters, list(NULL), list(args$font))),
-            font_size=args$font_size
+            font_size=args$fontsize
             ),
         .progress = T
         )
