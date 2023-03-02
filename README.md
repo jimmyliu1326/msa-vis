@@ -1,8 +1,10 @@
 # msa-vis 
 ![r-vers](https://img.shields.io/badge/%20-v4.1.3-gray?labelColor=blue&logo=R)
-![docker build](https://github.com/jimmyliu1326/msa-vis/actions/workflows/docker-image.yml/badge.svg)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
+
+![docker build](https://github.com/jimmyliu1326/msa-vis/actions/workflows/docker-image.yml/badge.svg)
+![](https://img.shields.io/docker/image-size/jimmyliu1326/msa-vis)
 
 # Introduction
 `msa-vis` is developed to generate publication-grade visualizations for multiple sequence alignments (MSA).
