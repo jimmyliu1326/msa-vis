@@ -40,3 +40,12 @@ If the help message successfully prints to screen, then you are all set! :partyi
 ![](img/dna.png)
 ### Amino acid alignment
 ![](img/aa.png)
+
+## Credit
+`msa-vis` would not have been possible without the following open source packages developed by the amazing R community:
+
+* [ggmsa](https://github.com/YuLab-SMU/ggmsa)
+* [ggpubr](https://github.com/kassambara/ggpubr)
+* [scales](https://github.com/r-lib/scales)
+* [furrr](https://github.com/DavisVaughan/furrr)
+* [Biostrings](https://github.com/Bioconductor/Biostrings)
