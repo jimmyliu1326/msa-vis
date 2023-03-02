@@ -7,8 +7,8 @@ RUN apt-get update -y && \
 RUN R -e "install.packages(c( \
                 'ggpubr', 'scales', \
                 'furrr', 'argparse', \
-                'remotes'))"
-    # R -e "remotes::install_github('YuLab-SMU/ggmsa'))"
+                'remotes'))" && \
+    R -e "remotes::install_github('YuLab-SMU/ggmsa')"
 
 ADD msa-vis.R /usr/local/bin/
 
