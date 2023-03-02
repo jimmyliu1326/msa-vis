@@ -6,29 +6,29 @@
 ![docker build](https://github.com/jimmyliu1326/msa-vis/actions/workflows/docker-image.yml/badge.svg)
 ![](https://img.shields.io/docker/image-size/jimmyliu1326/msa-vis)
 
-# Introduction
+## Introduction
 `msa-vis` is developed to generate publication-grade visualizations for multiple sequence alignments (MSA).
 
-# Getting started
+## Getting started
 
 The source code and required dependencies of `msa-vis` are containerized and can be downloaded as a single image file either using `Docker` or `Singularity`.
 
-#### Docker
+### Docker
 ```
 docker pull jimmyliu1326/msa-vis
 ```
-#### Singularity
+### Singularity
 ```
 singularity pull docker://jimmyliu1326/msa-vis
 ```
 
 Once the image has been downloaded, try calling `msa-vis` to print the script usage message to screen.
 
-#### Docker
+### Docker
 ```
 docker run jimmyliu1326/msa-vis msa-vis.R --help
 ```
-#### Singularity
+### Singularity
 ```
 singularity exec msa-vis.sif msa-vis.R --help
 ```
