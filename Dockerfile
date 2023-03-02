@@ -1,7 +1,7 @@
 FROM rocker/r-ver:4.1.3
 
 RUN apt-get update -y && \
-    apt-get install -y procps pandoc && \
+    apt-get install -y procps pandoc libproj-dev && \
     rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages(c( \
