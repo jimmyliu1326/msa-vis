@@ -124,6 +124,7 @@ main <- function() {
         )
     # export figure
     ggexport(fig, filename = args$output)
+    unlink("Rplots.pdf")
 
     # Shut down parallel sessions
     if (!inherits(plan(), "sequential")) plan(sequential)
