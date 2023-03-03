@@ -119,7 +119,7 @@ main <- function() {
     fig <- ggarrange(
         plotlist = plots,
         ncol = 1,
-        nrow = ifelse(round(40/length(msa@ranges)) < 1, 1, round(40/length(msa@ranges))),
+        nrow = ifelse(round(35/length(msa@ranges)) < 1, 1, round(35/length(msa@ranges))),
         common.legend = T
         )
     # export figure
